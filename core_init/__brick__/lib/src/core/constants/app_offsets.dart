@@ -2,6 +2,7 @@ import 'package:{{ project_name.snakeCase() }}/src/core/constants/size.dart';
 import 'package:flutter/material.dart';
 
 // Just a sample, change implementation when required
+// Call the init method inside the build() of a top level widget that doesn't re-render
 class AppOffsets {
   static late BoxConstraints formWidthConstraint;
   static late BoxConstraints messageWidthConstaint;
