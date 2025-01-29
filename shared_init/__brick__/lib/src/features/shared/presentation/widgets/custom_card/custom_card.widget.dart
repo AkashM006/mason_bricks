@@ -12,11 +12,13 @@ class CustomCardWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    // Change offsets if required
+    // final cardBorderRadius = AppOffsets.cardBorderRadius;
+    final cardBorderRadius = BorderRadius.circular(16);
+
     return Card(
       shape: RoundedRectangleBorder(
-        // Change offsets if required
-        // borderRadius: AppOffsets.cardBorderRadius,
-        borderRadius: BorderRadius.circular(16),
+        borderRadius: cardBorderRadius,
       ),
       child: InkWell(
         borderRadius: cardBorderRadius,
