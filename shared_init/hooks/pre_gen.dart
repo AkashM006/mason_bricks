@@ -15,9 +15,10 @@ void run(HookContext context) async {
     ),
   );
 
-  generator.generate(
+  await generator.generate(
     DirectoryGeneratorTarget(currentDirectory),
     vars: {'project_name': projectName},
+    fileConflictResolution: FileConflictResolution.overwrite,
   );
 
   coreProgress.complete();
