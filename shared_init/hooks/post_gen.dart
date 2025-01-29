@@ -20,6 +20,7 @@ void run(HookContext context) async {
     DirectoryGeneratorTarget(currentDirectory),
     vars: {'project_name': projectName},
     fileConflictResolution: FileConflictResolution.overwrite,
+    logger: context.logger,
   );
 
   coreProgress.complete();
