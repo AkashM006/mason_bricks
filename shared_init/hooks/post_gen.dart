@@ -7,7 +7,8 @@ void run(HookContext context) async {
   final currentDirectory = Directory.current;
 
   // need to initialize core_init for this package
-  final coreProgress = context.logger.progress("Making core_init....");
+  final coreProgress =
+      context.logger.progress("Making core_init with hooks....");
 
   final generator = await MasonGenerator.fromBrick(
     Brick.git(
