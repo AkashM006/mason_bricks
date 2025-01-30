@@ -9,8 +9,10 @@ class App extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    SizeConfig.init(context);
-    AppOffsets.init(context);
+
+    // Initialize any configs here if required
+    // These are typically store in core/constants/
+    // SizeConfig.init(context);
 
     {{#locks_screen_to_portrait}}
     SystemChrome.setPreferredOrientations([
