@@ -16,13 +16,15 @@ void run(HookContext context) async {
     ),
   );
 
+  final vars = {'project_name': projectName};
+
   await generator.generate(
     DirectoryGeneratorTarget(currentDirectory),
-    vars: {'project_name': projectName},
+    vars: vars,
     fileConflictResolution: FileConflictResolution.overwrite,
   );
 
-  await generator.hooks.postGen();
+  await generator.hooks.postGen(vars: vars);
 
   coreProgress.complete();
 }

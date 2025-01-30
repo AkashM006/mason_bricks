@@ -14,14 +14,14 @@ void run(HookContext context) async {
     ),
   );
 
+  final vars = {'project_name': projectName};
+
   await generator.generate(
     DirectoryGeneratorTarget(currentDirectory),
-    vars: {
-      'project_name': projectName,
-    },
+    vars: vars,
   );
 
-  await generator.hooks.postGen();
+  await generator.hooks.postGen(vars: vars);
 
   coreProgress.complete();
 }
