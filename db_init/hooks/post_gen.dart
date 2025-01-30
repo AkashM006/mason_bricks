@@ -34,4 +34,10 @@ void run(HookContext context) async {
   );
 
   formattingProgress.complete();
+
+  final buildingProgress = context.logger.progress("Building code...");
+
+  await Process.run('dart', ['run', 'build_runner', 'build']);
+
+  buildingProgress.complete();
 }
