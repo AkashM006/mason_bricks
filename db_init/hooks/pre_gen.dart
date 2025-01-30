@@ -16,6 +16,8 @@ void run(HookContext context) async {
     ),
   );
 
+  await riverpodGenerator.hooks.preGen();
+
   await riverpodGenerator.generate(
     DirectoryGeneratorTarget(currentDirectory),
     vars: {'project_name': projectName},
