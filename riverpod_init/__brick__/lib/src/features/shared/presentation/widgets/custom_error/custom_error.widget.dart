@@ -15,7 +15,9 @@ class CustomErrorWidget extends StatelessWidget {
     final errorColor = Theme.of(context).colorScheme.error;
 
     return ConstrainedBox(
-      constraints: AppOffsets.messageWidthConstaint,
+      // Change constraints if required
+      // constraints: AppOffsets.messageWidthConstaint,
+      constraints: const BoxConstraints(maxWidth: 500),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         crossAxisAlignment: CrossAxisAlignment.center,
