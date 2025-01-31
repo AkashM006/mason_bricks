@@ -26,8 +26,3 @@ environment:
 #  * a list of values (enums only)
 #  * an optional separator (list only)
 vars:
-  project_name:
-    type: string
-    description: Project Name
-    default: my_flutter_project
-    prompt: What is the project name ( name used in flutter create ) ?
