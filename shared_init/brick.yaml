@@ -30,9 +30,19 @@ vars:
     type: string
     description: Project Name
     default: my_flutter_project
-    prompt: What is the project name ( name used in flutter create ) ?
+    prompt: What is the project name( name used in flutter create )?
   uses_router:
     type: boolean
     description: Does the project use router
     default: false
-    prompt: Does this project use a router ?
+    prompt: Does this project use a router?
+  uses_riverpod:
+    type: boolean
+    description: Does the project use riverpod
+    default: false
+    prompt: Does this project use riverpod?
+  uses_db:
+    type: boolean
+    description: Does the project use a Db
+    default: false
+    prompt: Does this project use a Db?
