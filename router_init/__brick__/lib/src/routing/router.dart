@@ -44,6 +44,7 @@ extension AppRoutesExtension on PAGES {
             PAGES.home => (context, routerState) => const HomeScreen(),
           };
 
+  {{#uses_db}}
   FutureOr<String?> Function(BuildContext context, GoRouterState state)
       get redirect => switch (this) {
             PAGES.driftDebug => (context, routerState) {
@@ -52,6 +53,7 @@ extension AppRoutesExtension on PAGES {
               },
             _ => (context, routerState) => null,
           };
+  {{/uses_db}}
 }
 
 final List<RouteBase> routes = PAGES.values
