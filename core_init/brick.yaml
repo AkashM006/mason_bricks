@@ -30,3 +30,8 @@ vars:
     description: Project Name
     default: my_flutter_project
     prompt: What is the project name ( name used in flutter create ) ?
+  uses_db:
+    type: boolean
+    description: Does the project use a Db
+    default: false
+    prompt: Does this project use a Db?
