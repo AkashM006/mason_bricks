@@ -3,45 +3,45 @@ import 'dart:async';
 import 'package:{{ project_name.snakeCase() }}/src/core/constants/settings.dart';
 import 'package:{{ project_name.snakeCase() }}/src/features/home/presentation/home.screen.dart';
 import 'package:{{ project_name.snakeCase() }}/src/features/shared/presentation/not_found.screen.dart';
-{{#uses_router}}
+{{#uses_db}}
 import 'package:{{ project_name.snakeCase() }}/src/features/shared/presentation/drift_debug.screen.dart';
 import 'package:{{ project_name.snakeCase() }}/src/features/shared/presentation/widgets/debugger_wrapper/debugger_wrapper.widget.dart';
-{{/uses_router}}
+{{/uses_db}}
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
 enum PAGES {
-  {{#uses_router}}
+  {{#uses_db}}
   driftDebug,
-  {{/uses_router}}
+  {{/uses_db}}
   notFound,
   home,
 }
 
 extension AppRoutesExtension on PAGES {
   String get path => switch (this) {
-        {{#uses_router}}
+        {{#uses_db}}
         PAGES.driftDebug => '/drift-debug',
-        {{/uses_router}}
+        {{/uses_db}}
         PAGES.notFound => '/*',
         PAGES.home => '/',
       };
 
   String get name => switch (this) {
-        {{#uses_router}}
+        {{#uses_db}}
         PAGES.driftDebug => "Drift Debug",
-        {{/uses_router}}
+        {{/uses_db}}
         PAGES.notFound => "Not Found",
         PAGES.home => "Home",
       };
 
   Widget Function(BuildContext context, GoRouterState routerState)
       get builder => switch (this) {
-            {{#uses_router}}
+            {{#uses_db}}
             PAGES.driftDebug => (context, routerState) =>
                 const DriftDebugScreen(),
-            {{/uses_router}}
+            {{/uses_db}}
             PAGES.notFound => (context, routerState) => const NotFoundScreen(),
             PAGES.home => (context, routerState) => const HomeScreen(),
           };
