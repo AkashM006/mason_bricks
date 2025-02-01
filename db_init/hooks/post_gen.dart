@@ -3,8 +3,6 @@ import 'dart:io';
 import 'package:mason/mason.dart';
 
 void run(HookContext context) async {
-  final currentDirectory = Directory.current;
-
   final installationProgress =
       context.logger.progress("Installing packages used by drift...");
 
@@ -23,21 +21,4 @@ void run(HookContext context) async {
   );
 
   installationProgress.complete();
-
-  final formattingProgress =
-      context.logger.progress("Formatting generated code...");
-
-  await Process.run(
-    'dart',
-    ['format', currentDirectory.path],
-    runInShell: true,
-  );
-
-  formattingProgress.complete();
-
-  final buildingProgress = context.logger.progress("Building code...");
-
-  await Process.run('dart', ['run', 'build_runner', 'build']);
-
-  buildingProgress.complete();
 }
