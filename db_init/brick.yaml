@@ -26,13 +26,3 @@ environment:
 #  * a list of values (enums only)
 #  * an optional separator (list only)
 vars:
-  project_name:
-    type: string
-    description: Project Name
-    default: my_flutter_project
-    prompt: What is the project name ( name used in flutter create ) ?
-  uses_router:
-    type: boolean
-    description: Uses router or not
-    default: false
-    prompt: Does this project use router ?
