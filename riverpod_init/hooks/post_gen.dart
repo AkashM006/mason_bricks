@@ -12,14 +12,9 @@ void run(HookContext context) async {
     'dev:riverpod_lint',
   ];
 
-  final List<String> commands = ['pub', 'add'];
-
   final progress = context.logger.progress('Installing riverpod packages...');
 
-  for (var package in packages) {
-    commands.add(package);
-  }
-  await Process.run('flutter', commands, runInShell: true);
+  await Process.run('flutter', ['pub', 'add', ...packages], runInShell: true);
 
   progress.complete();
 }
