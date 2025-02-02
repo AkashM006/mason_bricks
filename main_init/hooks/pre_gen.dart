@@ -14,29 +14,29 @@ void run(HookContext context) async {
       'name': 'core',
       'path': 'core_init',
     },
-    {
-      'name': 'shared',
-      'path': 'shared_init',
-    },
-    {
-      'name': 'riverpod',
-      'path': 'riverpod_init',
-      'ignore': !usesRiverpod && !usesDb,
-    },
-    {
-      'name': 'db',
-      'path': 'db_init',
-      'ignore': !usesDb,
-    },
-    {
-      'name': 'router',
-      'path': 'router_init',
-      'ignore': !usesRouter,
-    },
-    {
-      'name': 'app',
-      'path': 'app_init',
-    }
+    // {
+    //   'name': 'shared',
+    //   'path': 'shared_init',
+    // },
+    // {
+    //   'name': 'riverpod',
+    //   'path': 'riverpod_init',
+    //   'ignore': !usesRiverpod && !usesDb,
+    // },
+    // {
+    //   'name': 'db',
+    //   'path': 'db_init',
+    //   'ignore': !usesDb,
+    // },
+    // {
+    //   'name': 'router',
+    //   'path': 'router_init',
+    //   'ignore': !usesRouter,
+    // },
+    // {
+    //   'name': 'app',
+    //   'path': 'app_init',
+    // }
   ];
 
   final vars = {
@@ -46,8 +46,8 @@ void run(HookContext context) async {
     'uses_router': usesRouter,
   };
 
-  brickDetails.forEach((brick) async {
-    if (brick['ignore'] != null && brick['ignore']) return;
+  for (var brick in brickDetails) {
+    if (brick['ignore'] != null && brick['ignore']) continue;
 
     final progress =
         context.logger.progress("Making ${brick['name']} brick...");
@@ -70,5 +70,5 @@ void run(HookContext context) async {
     );
 
     progress.complete();
-  });
+  }
 }
