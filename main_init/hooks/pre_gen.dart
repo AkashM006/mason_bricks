@@ -14,29 +14,29 @@ void run(HookContext context) async {
       'name': 'core',
       'path': 'core_init',
     },
-    // {
-    //   'name': 'shared',
-    //   'path': 'shared_init',
-    // },
-    // {
-    //   'name': 'riverpod',
-    //   'path': 'riverpod_init',
-    //   'ignore': !usesRiverpod && !usesDb,
-    // },
-    // {
-    //   'name': 'db',
-    //   'path': 'db_init',
-    //   'ignore': !usesDb,
-    // },
-    // {
-    //   'name': 'router',
-    //   'path': 'router_init',
-    //   'ignore': !usesRouter,
-    // },
-    // {
-    //   'name': 'app',
-    //   'path': 'app_init',
-    // }
+    {
+      'name': 'shared',
+      'path': 'shared_init',
+    },
+    {
+      'name': 'riverpod',
+      'path': 'riverpod_init',
+      'ignore': !usesRiverpod && !usesDb,
+    },
+    {
+      'name': 'db',
+      'path': 'db_init',
+      'ignore': !usesDb,
+    },
+    {
+      'name': 'router',
+      'path': 'router_init',
+      'ignore': !usesRouter,
+    },
+    {
+      'name': 'app',
+      'path': 'app_init',
+    }
   ];
 
   final vars = {
@@ -67,6 +67,7 @@ void run(HookContext context) async {
     await generator.generate(
       DirectoryGeneratorTarget(currentDirectory),
       vars: vars,
+      fileConflictResolution: FileConflictResolution.prompt,
     );
 
     progress.complete();
