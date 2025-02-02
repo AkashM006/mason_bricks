@@ -49,7 +49,7 @@ class App extends StatelessWidget {
     return MaterialApp.router(
       title: kAppName,
       routerConfig: router,
-      themeMode: ThemeMode.system,
+      themeMode: themeMode,
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(
           seedColor: kSeedColor,
