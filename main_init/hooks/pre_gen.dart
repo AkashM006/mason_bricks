@@ -62,6 +62,8 @@ void run(HookContext context) async {
       ),
     );
 
+    await generator.hooks.postGen(vars: vars);
+
     await generator.generate(
       DirectoryGeneratorTarget(currentDirectory),
       vars: vars,
