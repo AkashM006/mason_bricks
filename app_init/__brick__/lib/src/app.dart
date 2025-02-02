@@ -6,6 +6,9 @@ import 'package:{{ project_name.snakeCase() }}/src/core/constants/settings.dart'
 {{#uses_db}}
 import 'package:{{ project_name.snakeCase() }}/src/features/shared/presentation/widgets/debugger_wrapper/debugger_wrapper.widget.dart';
 {{/uses_db}}
+{{#uses_router}}
+import 'package:{{ project_name.snakeCase() }}/src/routing/router.dart';
+{{/uses_router}}
 
 class App extends StatelessWidget {
   const App({super.key});
