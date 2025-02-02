@@ -57,7 +57,7 @@ void run(HookContext context) async {
         GitPath(
           "https://github.com/AkashM006/mason_bricks",
           path: brick['path'],
-          ref: "/features/app_init",
+          ref: "features/app_init",
         ),
       ),
     );
