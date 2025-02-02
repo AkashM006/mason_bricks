@@ -72,4 +72,9 @@ void run(HookContext context) async {
 
     progress.complete();
   }
+
+  final mainFile = File('lib/main.dart');
+  if (mainFile.existsSync()) {
+    mainFile.deleteSync();
+  }
 }
