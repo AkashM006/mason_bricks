@@ -3,6 +3,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 {{/locks_screen_to_portrait}}
 import 'package:{{ project_name.snakeCase() }}/src/core/constants/settings.dart';
+{{#uses_db}}
+import 'package:{{ project_name.snakeCase() }}/src/features/shared/presentation/widgets/debugger_wrapper/debugger_wrapper.widget.dart';
+{{/uses_db}}
 
 class App extends StatelessWidget {
   const App({super.key});
@@ -67,6 +70,19 @@ class App extends StatelessWidget {
       themeMode: themeMode,
       theme: lightTheme,
       darkTheme: darkTheme,
+      {{#uses_db}}
+      home: DebuggerWrapper(
+        child: Scaffold(
+          appBar: AppBar(
+            title: const Text("Home"),
+          ),
+          body: const Center(
+            child: Text("Welcome Home"),
+          ),
+        ),
+      ),
+      {{/uses_db}}
+      {{^uses_db}}
       home: Scaffold(
         appBar: AppBar(
           title: const Text("Home"),
@@ -75,6 +91,7 @@ class App extends StatelessWidget {
           child: Text("Welcome Home"),
         ),
       ),
+      {{/uses_db}}
     );
     {{/uses_router}}
   }

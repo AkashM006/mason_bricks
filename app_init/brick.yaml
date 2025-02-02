@@ -30,14 +30,19 @@ vars:
     type: string
     description: Project Name
     default: my_flutter_project
-    prompt: What is the project name ( name used in flutter create ) ?
+    prompt: What is the project name ( name used in flutter create )?
   locks_screen_to_portrait:
     type: boolean
     description: Locks screen to portrait or not
     default: false
-    prompt: Does this app lock the user screen to portrait ?
+    prompt: Does this app lock the user screen to portrait?
   uses_router:
     type: boolean
     description: Uses router or not
     default: false
-    prompt: Does this app use a router ?
+    prompt: Does this app use a router?
+  uses_db:
+    type: boolean
+    description: Does the project use a Db
+    default: false
+    prompt: Does this project use a Db?
