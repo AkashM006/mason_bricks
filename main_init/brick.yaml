@@ -46,3 +46,8 @@ vars:
     description: Does the project use a Db
     default: false
     prompt: Does this project use a Db?
+  locks_screen_to_portrait:
+    type: boolean
+    description: Locks screen to portrait or not
+    default: false
+    prompt: Does this app lock the user screen to portrait?

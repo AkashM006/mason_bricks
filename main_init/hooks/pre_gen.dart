@@ -6,6 +6,8 @@ void run(HookContext context) async {
   final usesRouter = context.vars['uses_router'] as bool;
   final usesRiverpod = context.vars['uses_riverpod'] as bool;
   final usesDb = context.vars['uses_db'] as bool;
+  final locksScreenToPortrait =
+      context.vars['locks_screen_to_portrait'] as bool;
   final projectName = context.vars['project_name'] as String;
   final currentDirectory = Directory.current;
 
@@ -44,6 +46,7 @@ void run(HookContext context) async {
     'uses_db': usesDb,
     'uses_riverpod': usesRiverpod,
     'uses_router': usesRouter,
+    'locks_screen_to_portrait': locksScreenToPortrait,
   };
 
   for (var brick in brickDetails) {
