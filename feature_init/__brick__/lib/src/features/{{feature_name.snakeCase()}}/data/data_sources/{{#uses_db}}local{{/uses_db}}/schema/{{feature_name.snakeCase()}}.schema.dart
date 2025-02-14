@@ -1,0 +1,5 @@
+import 'package:drift/drift.dart';
+
+class {{feature_name.pascalCase()}} extends Table {
+  IntColumn get id => integer().autoIncrement();
+}
