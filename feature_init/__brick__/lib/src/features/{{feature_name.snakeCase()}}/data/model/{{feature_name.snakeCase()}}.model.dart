@@ -21,7 +21,7 @@ class {{ feature_name.pascalCase() }}Model {
   );
 
   {{#uses_db}}
-  factory {{feature_name.pascalCase()}}Model.fromDbModel({{feature_name.pascalCase()}} model) => {{feature_name.pascalCase()}}Model(
+  factory {{feature_name.pascalCase()}}Model.fromDbModel({{feature_name.pascalCase()}}Data model) => {{feature_name.pascalCase()}}Model(
     id: model.id,
     name: model.name,
   );
