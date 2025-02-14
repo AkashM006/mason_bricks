@@ -1,31 +1,38 @@
-import "package:{{project_name.snakeCase()}}/src/features/{{feature_name.snakeCase()}}/domain/entity/{{feature_name.snakeCase()}}.entity.dart"
+import "package:{{project_name.snakeCase()}}/src/features/{{feature_name.snakeCase()}}/domain/entity/{{feature_name.snakeCase()}}.entity.dart";
 
 class {{ feature_name.pascalCase() }}Model {
   final int _id;
+  final String _name;
 
   const {{feature_name.pascalCase()}}Model({
     required int id,
-  }) : _id = id;
+    required String name,
+  }) : _id = id, _name = name;
 
   int get id => _id;
+  String get name => _name;
 
-  factory {{feature_name.pascalCase()}}Model.fromEntity({{feature_name.pascalCase()}}Entity entity) => {{feature_name.pascalCase()}}(
+  factory {{feature_name.pascalCase()}}Model.fromEntity({{feature_name.pascalCase()}}Entity entity) => {{feature_name.pascalCase()}}Model(
     id: entity.id,
+    name: entity.name,
   );
 
-  {{feature_name.pascalCase()}}Entity toEntity() => {{feature_name.pascalCase()}}(
+  {{feature_name.pascalCase()}}Entity toEntity() => {{feature_name.pascalCase()}}Entity(
     id: id,
+    name: name,
   );
 
   @override
-  bool operator ==(covariant {{feature_name}}Model other) => id == other.id;
+  bool operator ==(covariant {{feature_name.pascalCase()}}Model other) => id == other.id && name == other.name;
 
   @override
-  int get hashCode => Object.hash(id);
+  int get hashCode => Object.hash(id, name);
 
   {{feature_name.pascalCase()}}Model copyWith({
     int? id,
-  }) => {{feature_name.pascalCase()}}(
+    String? name,
+  }) => {{feature_name.pascalCase()}}Model(
     id: id ?? this.id,
+    name: name ?? this.name,
   );
 }
