@@ -1,6 +1,5 @@
 import 'package:drift/drift.dart';
 import 'package:{{project_name.snakeCase()}}/src/core/utils/custom_error.util.dart';
-import 'package:{{project_name.snakeCase()}}/src/core/utils/error_handler.util.dart';
 import 'package:{{project_name.snakeCase()}}/src/core/utils/error_msg.util.dart';
 import 'package:{{project_name.snakeCase()}}/src/features/{{feature_name.snakeCase()}}/data/model/{{feature_name.snakeCase()}}.model.dart';
 import 'package:{{project_name.snakeCase()}}/src/features/shared/data/data_sources/db/database.dart';
@@ -22,7 +21,7 @@ class {{feature_name.pascalCase()}}Dao extends DatabaseAccessor<AppDatabase> wit
             .map(({{feature_name.camelCase()}}) => {{feature_name.pascalCase()}}Model.fromDbModel({{feature_name.camelCase()}},),)
             .toList();
       }).handleError((error) {
-        final errorMsg = somethingWentWrongMsg("getting your logs");
+        final errorMsg = somethingWentWrongMsg("getting your {{feature_name.sentenceCase()}}");
         throw AppError(message: errorMsg);
       });
 }

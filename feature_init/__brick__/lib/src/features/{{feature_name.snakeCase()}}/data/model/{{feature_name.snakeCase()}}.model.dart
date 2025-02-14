@@ -17,6 +17,13 @@ class {{ feature_name.pascalCase() }}Model {
     name: entity.name,
   );
 
+  {{#uses_db}}
+  factory {{feature_name.pascalCase()}}Model.fromDbModel({{feature_name.pascalCase()}} model) => {{feature_name.pascalCase()}}Model(
+    id: model.id,
+    name: model.name,
+  );
+  {{/uses_db}}
+
   {{feature_name.pascalCase()}}Entity toEntity() => {{feature_name.pascalCase()}}Entity(
     id: id,
     name: name,
