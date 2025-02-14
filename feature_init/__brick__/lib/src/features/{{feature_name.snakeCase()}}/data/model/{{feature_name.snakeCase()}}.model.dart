@@ -1,4 +1,7 @@
 import "package:{{project_name.snakeCase()}}/src/features/{{feature_name.snakeCase()}}/domain/entity/{{feature_name.snakeCase()}}.entity.dart";
+{{#uses_db}}
+import 'package:{{project_name.snakeCase()}}/src/features/shared/data/data_sources/db/database.dart';
+{{/uses_db}}
 
 class {{ feature_name.pascalCase() }}Model {
   final int _id;
