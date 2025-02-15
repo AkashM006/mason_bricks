@@ -7,7 +7,7 @@ import 'package:riverpod_annotation/riverpod_annotation.dart';
 
 part '{{feature_name.snakeCase()}}_impl.repository.g.dart';
 
-class {{feature_name.pascalCase()}}Impl extends BaseRepository implement {{feature_name.pascalCase()}}Repository {
+class {{feature_name.pascalCase()}}Impl extends BaseRepository implements {{feature_name.pascalCase()}}Repository {
   final {{feature_name.pascalCase()}}Service _{{feature_name.camelCase()}}Service;
 
   const {{feature_name.pascalCase()}}Impl(this._{{feature_name.camelCase()}}Service);
