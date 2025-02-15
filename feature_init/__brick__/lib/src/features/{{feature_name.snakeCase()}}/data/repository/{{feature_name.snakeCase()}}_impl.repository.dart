@@ -17,7 +17,7 @@ class {{feature_name.pascalCase()}}Impl extends BaseRepository implements {{feat
 }
 
 @riverpod
-{{feature_name.pascalCase()}}Impl {{feature_name.camelCase()}}(Ref ref) {
+{{feature_name.pascalCase()}}Impl {{feature_name.camelCase()}}Impl(Ref ref) {
   final {{feature_name.camelCase()}}Service = ref.watch({{feature_name.camelCase()}}ServiceProvider);
 
   return {{feature_name.pascalCase()}}Impl({{feature_name.camelCase()}}Service);
