@@ -4,9 +4,7 @@ import 'package:{{project_name.snakeCase()}}/src/features/{{feature_name.snakeCa
 import 'package:{{project_name.snakeCase()}}/src/features/{{feature_name.snakeCase()}}/domain/repository/{{feature_name.snakeCase()}}.repository.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
-{{#gen_create}}
 import 'package:{{project_name.snakeCase()}}/src/core/utils/data_state.util.dart';
-{{/gen_create}}
 
 part '{{feature_name.snakeCase()}}_impl.repository.g.dart';
 
