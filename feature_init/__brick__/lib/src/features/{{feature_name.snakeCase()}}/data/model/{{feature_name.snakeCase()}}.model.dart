@@ -2,7 +2,7 @@ import "package:{{project_name.snakeCase()}}/src/features/{{feature_name.snakeCa
 {{#uses_db}}
 import 'package:{{project_name.snakeCase()}}/src/features/shared/data/data_sources/db/database.dart';
 {{/uses_db}}
-import 'package:drift/drift.dart';s
+import 'package:drift/drift.dart';
 
 class {{ feature_name.pascalCase() }}Model {
   final int _id;
