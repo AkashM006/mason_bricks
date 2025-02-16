@@ -4,9 +4,9 @@ import 'package:{{project_name.snakeCase()}}/src/core/utils/error_msg.util.dart'
 import 'package:{{project_name.snakeCase()}}/src/features/{{feature_name.snakeCase()}}/data/model/{{feature_name.snakeCase()}}.model.dart';
 import 'package:{{project_name.snakeCase()}}/src/features/shared/data/data_sources/db/database.dart';
 import 'package:{{project_name.snakeCase()}}/src/features/{{feature_name.snakeCase()}}/data/data_sources/local/schema/{{feature_name.snakeCase()}}.schema.dart';
-{{#generate_create}}
+{{#gen_create}}
 import 'package:{{project_name.snakeCase()}}/src/core/utils/error_handler.util.dart';
-{{/generate_create}}
+{{/gen_create}}
 
 part '{{feature_name.snakeCase()}}.dao.g.dart';
 
@@ -28,9 +28,9 @@ class {{feature_name.pascalCase()}}Dao extends DatabaseAccessor<AppDatabase> wit
         throw AppError(message: errorMsg);
       });
 
-  {{#generate_create}}
+  {{#gen_create}}
   Future<void> add{{feature_name.pascalCase()}}({{feature_name.pascalCase()}}Model model) => handleError(() async {
     await into({{feature_name.camelCase()}}).insert(model.toCompanion());
   }, "adding your {{feature_name.sentenceCase()}}");
-  {{/generate_create}}
+  {{/gen_create}}
 }

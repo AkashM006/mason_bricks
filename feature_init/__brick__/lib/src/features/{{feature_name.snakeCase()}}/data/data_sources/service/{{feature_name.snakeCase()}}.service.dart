@@ -28,10 +28,10 @@ class {{feature_name.pascalCase()}}Service {
           );
   {{/uses_db}}
 
-  {{#generate_create}}
+  {{#gen_create}}
   Future<void> add{{feature_name.pascalCase()}}({{feature_name.pascalCase()}}Entity entity) =>
       _appDatabase.{{feature_name.camelCase()}}Dao.add{{feature_name.pascalCase()}}({{feature_name.pascalCase()}}Model.fromEntity(entity));
-  {{/generate_create}}
+  {{/gen_create}}
 }
 
 @riverpod
