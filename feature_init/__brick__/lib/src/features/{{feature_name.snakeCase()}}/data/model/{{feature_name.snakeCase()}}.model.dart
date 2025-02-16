@@ -2,6 +2,7 @@ import "package:{{project_name.snakeCase()}}/src/features/{{feature_name.snakeCa
 {{#uses_db}}
 import 'package:{{project_name.snakeCase()}}/src/features/shared/data/data_sources/db/database.dart';
 {{/uses_db}}
+import 'package:drift/drift.dart';s
 
 class {{ feature_name.pascalCase() }}Model {
   final int _id;
@@ -31,6 +32,7 @@ class {{ feature_name.pascalCase() }}Model {
     id: id,
     name: name,
   );
+  {{feature_name.pascalCase()}}Companion toCompanion() => {{feature_name.pascalCase()}}Companion(name: Value(name));
 
   @override
   bool operator ==(covariant {{feature_name.pascalCase()}}Model other) => id == other.id && name == other.name;

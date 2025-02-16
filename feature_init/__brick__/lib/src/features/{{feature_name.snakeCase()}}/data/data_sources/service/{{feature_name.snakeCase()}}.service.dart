@@ -4,6 +4,7 @@ import 'package:{{project_name.snakeCase()}}/src/features/shared/data/data_sourc
 {{/uses_db}}
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
+import 'package:{{project_name.snakeCase()}}/src/features/{{feature_name.snakeCase()}}/data/model/{{feature_name.snakeCase()}}.model.dart';
 
 part '{{feature_name.snakeCase()}}.service.g.dart';
 
@@ -26,6 +27,11 @@ class {{feature_name.pascalCase()}}Service {
                 .toList(),
           );
   {{/uses_db}}
+
+  {{#generate_create}}
+  Future<void> add{{feature_name.pascalCase()}}({{feature_name.pascalCase()}}Entity entity) =>
+      _appDatabase.{{feature_name.camelCase()}}Dao.add{{feature_name.pascalCase()}}({{feature_name.pascalCase()}}Model.fromEntity(entity));
+  {{/generate_create}}
 }
 
 @riverpod

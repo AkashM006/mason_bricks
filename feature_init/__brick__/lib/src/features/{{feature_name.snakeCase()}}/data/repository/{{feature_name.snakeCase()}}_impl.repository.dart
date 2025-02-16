@@ -4,6 +4,9 @@ import 'package:{{project_name.snakeCase()}}/src/features/{{feature_name.snakeCa
 import 'package:{{project_name.snakeCase()}}/src/features/{{feature_name.snakeCase()}}/domain/repository/{{feature_name.snakeCase()}}.repository.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
+{{#generate_create}}
+import 'package:{{project_name.snakeCase()}}/src/core/utils/data_state.util.dart';
+{{/generate_create}}
 
 part '{{feature_name.snakeCase()}}_impl.repository.g.dart';
 
@@ -14,6 +17,10 @@ class {{feature_name.pascalCase()}}Impl extends BaseRepository implements {{feat
 
   @override
   Stream<List<{{feature_name.pascalCase()}}Entity>> watch{{feature_name.pascalCase()}}() => _{{feature_name.camelCase()}}Service.watch{{feature_name.pascalCase()}}();
+
+  @override
+  Future<DataState<void>> add{{feature_name.pascalCase()}}({{feature_name.pascalCase()}}Entity entity) =>
+      safeExecute(() => _{{feature_name.camelCase()}}Service.add{{feature_name.pascalCase()}}(entity));
 }
 
 @riverpod
