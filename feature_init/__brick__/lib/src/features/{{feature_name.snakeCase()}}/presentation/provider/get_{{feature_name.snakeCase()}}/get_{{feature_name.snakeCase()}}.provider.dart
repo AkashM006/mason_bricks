@@ -5,7 +5,7 @@ import 'package:{{project_name.snakeCase()}}/src/features/{{feature_name.snakeCa
 import 'package:{{project_name.snakeCase()}}/src/features/{{feature_name.snakeCase()}}/domain/usecase/get_{{feature_name.snakeCase()}}.usecase.dart';
 import 'package:{{project_name.snakeCase()}}/src/features/{{feature_name.snakeCase()}}/presentation/dto/{{feature_name.snakeCase()}}.dto.dart';
 
-part 'get_{{feature_Name.snakeCase()}}.provider.g.dart';
+part 'get_{{feature_name.snakeCase()}}.provider.g.dart';
 
 @riverpod
 Future<{{feature_name.pascalCase()}}Dto> {{feature_name.camelCase()}}(Ref ref, int id) async {
