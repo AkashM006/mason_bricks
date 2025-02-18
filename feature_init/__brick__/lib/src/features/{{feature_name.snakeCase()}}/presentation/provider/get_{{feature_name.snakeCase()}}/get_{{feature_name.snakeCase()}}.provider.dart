@@ -11,7 +11,7 @@ part 'get_{{feature_Name.snakeCase()}}.provider.g.dart';
 Future<{{feature_name.pascalCase()}}Dto> {{feature_name.camelCase()}}(Ref ref, int id) async {
   final {{feature_name.camelCase()}}Repository = ref.watch({{feature_name.camelCase()}}ImplProvider);
 
-  final result = await Get{{feature_name.pascalCase()}}({{feature_name.camelCase()}}Repository)(params: id);
+  final result = await Get{{feature_name.pascalCase()}}Usecase({{feature_name.camelCase()}}Repository)(params: id);
 
   return result.fold(
     onSuccess: (data) => {{feature_name.pascalCase()}}Dto.fromEntity(data),
