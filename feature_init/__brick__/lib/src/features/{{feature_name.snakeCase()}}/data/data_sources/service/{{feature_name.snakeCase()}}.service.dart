@@ -26,10 +26,16 @@ class {{feature_name.pascalCase()}}Service {
                 )
                 .toList(),
           );
-  {{/uses_db}}
-
+  
   Future<void> add{{feature_name.pascalCase()}}({{feature_name.pascalCase()}}Entity entity) =>
       _appDatabase.{{feature_name.camelCase()}}Dao.add{{feature_name.pascalCase()}}({{feature_name.pascalCase()}}Model.fromEntity(entity));
+
+  Future<{{feature_name.pascalCase()}}Entity> get{{feature_name.pascalCase()}}(int id) async {
+    final result = await _appDatabase.{{feature_name.camelCase()}Dao.get{{feature_name.pascalCase()}(id);
+
+    return result.toEntity();
+  }
+  {{/uses_db}}
 }
 
 @riverpod

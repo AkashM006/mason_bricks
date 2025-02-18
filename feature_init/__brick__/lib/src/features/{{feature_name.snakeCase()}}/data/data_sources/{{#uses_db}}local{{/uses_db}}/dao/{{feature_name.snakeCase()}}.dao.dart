@@ -29,4 +29,17 @@ class {{feature_name.pascalCase()}}Dao extends DatabaseAccessor<AppDatabase> wit
   Future<void> add{{feature_name.pascalCase()}}({{feature_name.pascalCase()}}Model model) => handleError(() async {
     await into({{feature_name.camelCase()}}).insert(model.toCompanion());
   }, "adding your {{feature_name.sentenceCase()}}");
+
+  Future<{{feature_name.pascalCase()}}Model> get{{feature_name.pascalCase()}}(int id) async => handleError(() async {
+    final query = (select({{feature_name.camelCase()}})..where((tbl) => tbl.id.equals(id)));
+
+    final {{feature_name.camelCase()}}Entry = await query.getSingleOrNull();
+
+    if ({{feature_name.camelCase()}}Entry == null) {
+      final errorMsg = doesNotExistMsg("{{feature_name.sentenceCase()}} you're trying to get");
+      throw AppError(message: errorMsg);
+    }
+
+    return {{feature_name.pascalCase()}}Model.fromDbModel({{feature_name.camelCase()}}Entry);
+  }, "getting your {{feature_name.sentenceCase()}}");
 }
