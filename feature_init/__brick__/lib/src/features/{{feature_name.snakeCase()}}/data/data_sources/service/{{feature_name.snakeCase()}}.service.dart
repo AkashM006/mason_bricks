@@ -35,6 +35,11 @@ class {{feature_name.pascalCase()}}Service {
 
     return result.toEntity();
   }
+
+  Future<void> update{{feature_name.pascalCase()}}({{feature_name.pascalCase()}}Entity entity) async => await _appDatabase
+      .{{feature_name.camelCase()}}Dao
+      .update{{feature_name.pascalCase()}}(entity.id, {{feature_name.pascalCase()}}Model.fromEntity(entity));
+
   {{/uses_db}}
 }
 

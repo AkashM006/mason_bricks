@@ -42,4 +42,19 @@ class {{feature_name.pascalCase()}}Dao extends DatabaseAccessor<AppDatabase> wit
 
     return {{feature_name.pascalCase()}}Model.fromDbModel({{feature_name.camelCase()}}Entry);
   }, "getting your {{feature_name.sentenceCase()}}");
+
+  Future<void> update{{feature_name.pascalCase()}}(int id, {{feature_name.pascalCase()}}Model model) async =>
+      handleError(() async {
+        final query = (select({{feature_name.camelCase()}})..where((tbl) => tbl.id.equals(id)));
+
+        final result = await query.getSingleOrNull();
+
+        if (result == null) {
+          final errorMsg = doesNotExistMsg("{{feature_name.sentenceCase()}} you're trying edit");
+          throw AppError(message: errorMsg);
+        }
+
+        await (update({{feature_name.camelCase()}})
+          ..where((tbl) => tbl.id.equals(id))).write(model.toCompanion());
+      }, "updating your {{feature_name.sentenceCase()}}");
 }
