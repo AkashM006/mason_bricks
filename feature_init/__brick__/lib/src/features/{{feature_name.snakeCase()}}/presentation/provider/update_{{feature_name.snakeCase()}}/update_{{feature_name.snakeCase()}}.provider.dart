@@ -14,8 +14,6 @@ class Update{{feature_name.pascalCase()}} extends _$Update{{feature_name.pascalC
   void go({{feature_name.pascalCase()}}Dto dto) async {
     state = DataLoading();
 
-    await Future.delayed(const Duration(seconds: 4));
-
     final {{feature_name.camelCase()}}Repository = ref.read({{feature_name.camelCase()}}ImplProvider);
 
     final result = await Update{{feature_name.pascalCase()}}Usecase({{feature_name.camelCase()}}Repository)(

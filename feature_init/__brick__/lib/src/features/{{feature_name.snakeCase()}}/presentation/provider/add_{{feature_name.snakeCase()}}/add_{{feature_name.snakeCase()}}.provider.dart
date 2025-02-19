@@ -14,8 +14,6 @@ class Add{{feature_name.pascalCase()}} extends _$Add{{feature_name.pascalCase()}
   void go({{feature_name.pascalCase()}}Dto dto) async {
     state = DataLoading();
 
-    await Future.delayed(const Duration(seconds: 4));
-
     final {{feature_name.camelCase()}}Repository = ref.read({{feature_name.camelCase()}}ImplProvider);
 
     final result = await Add{{feature_name.pascalCase()}}Usecase({{feature_name.camelCase()}}Repository)(

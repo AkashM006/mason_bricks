@@ -40,6 +40,8 @@ class {{feature_name.pascalCase()}}Service {
       .{{feature_name.camelCase()}}Dao
       .update{{feature_name.pascalCase()}}(entity.id, {{feature_name.pascalCase()}}Model.fromEntity(entity));
 
+   Future<void> delete{{feature_name.pascalCase()}}(int id) =>
+      _appDatabase.{{feature_name.camelCase()}}Dao.delete{{feature_name.pascalCase()}}(id);
   {{/uses_db}}
 }
 

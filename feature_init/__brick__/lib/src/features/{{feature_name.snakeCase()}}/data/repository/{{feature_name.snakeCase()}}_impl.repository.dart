@@ -27,6 +27,10 @@ class {{feature_name.pascalCase()}}Impl extends BaseRepository implements {{feat
   @override
   Future<DataState<void>> update{{feature_name.pascalCase()}}({{feature_name.pascalCase()}}Entity entity) =>
       safeExecute(() => _{{feature_name.camelCase()}}Service.update{{feature_name.pascalCase()}}(entity));
+
+  @override
+  Future<DataState<void>> delete{{feature_name.pascalCase()}}(int id) =>
+      safeExecute(() => _{{feature_name.camelCase()}}Service.delete{{feature_name.pascalCase()}}(id));
 }
 
 @riverpod

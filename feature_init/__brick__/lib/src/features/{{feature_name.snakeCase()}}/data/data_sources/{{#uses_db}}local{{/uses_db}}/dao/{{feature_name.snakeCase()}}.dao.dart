@@ -57,4 +57,22 @@ class {{feature_name.pascalCase()}}Dao extends DatabaseAccessor<AppDatabase> wit
         await (update({{feature_name.camelCase()}})
           ..where((tbl) => tbl.id.equals(id))).write(model.toCompanion());
       }, "updating your {{feature_name.sentenceCase()}}");
+
+  Future<void> delete{{feature_name.pascalCase()}}(int id) async => handleError(() async {
+    final query = (select({{feature_name.camelCase()}})..where((tbl) => tbl.id.equals(id)));
+
+    final result = await query.get();
+
+    if (result.length > 1) {
+      final errorMsg = multipleRecordsFound("delete your {{feature_name.sentenceCase()}}");
+      throw AppError(message: errorMsg);
+    }
+
+    if (result.isEmpty) {
+      final errorMsg = doesNotExistMsg("{{feature_name.sentenceCase()}} you're trying to delete");
+      throw AppError(message: errorMsg);
+    }
+
+    await (delete({{feature_name.camelCase()}})..where((tbl) => tbl.id.equals(id))).go();
+  }, "deleting your {{feature_name.camelCase()}}");
 }
