@@ -25,6 +25,10 @@ class {{feature_name.pascalCase()}}Impl extends BaseRepository implements {{feat
       safeExecute(() => _{{feature_name.camelCase()}}Service.get{{feature_name.pascalCase()}}(id));
 
   @override
+  Stream<{{feature_name.pascalCase()}}Entity> watch{{feature_name.pascalCase()}}(int id) =>
+        _{{feature_name.camelCase()}}Service.watch{{feature_name.pascalCase()}}(id);
+
+  @override
   Future<DataState<void>> update{{feature_name.pascalCase()}}({{feature_name.pascalCase()}}Entity entity) =>
       safeExecute(() => _{{feature_name.camelCase()}}Service.update{{feature_name.pascalCase()}}(entity));
 

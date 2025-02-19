@@ -22,7 +22,7 @@ class {{feature_name.pascalCase()}}Dao extends DatabaseAccessor<AppDatabase> wit
             .map(({{feature_name.camelCase()}}) => {{feature_name.pascalCase()}}Model.fromDbModel({{feature_name.camelCase()}},),)
             .toList();
       }).handleError((error) {
-        final errorMsg = somethingWentWrongMsg("getting your {{feature_name.sentenceCase()}}");
+        final errorMsg = somethingWentWrongMsg("getting your {{feature_name.sentenceCase()}}s");
         throw AppError(message: errorMsg);
       });
 
@@ -42,6 +42,17 @@ class {{feature_name.pascalCase()}}Dao extends DatabaseAccessor<AppDatabase> wit
 
     return {{feature_name.pascalCase()}}Model.fromDbModel({{feature_name.camelCase()}}Entry);
   }, "getting your {{feature_name.sentenceCase()}}");
+
+  Stream<{{feature_name.pascalCase()}}Model> watch{{feature_name.pascalCase()}}(int id) =>
+      (select(todoItem)..where((tbl) => tbl.id.equals(id)))
+          .watchSingle()
+          .map(({{feature_name.camelCase()}}) {
+            return {{feature_name.pascalCase()}}Model.fromDbModel({{feature_name.camelCase()}});
+          })
+          .handleError((error) {
+            final errorMsg = somethingWentWrongMsg("getting your {{feature_name.sentenceCase()}}");
+            throw AppError(message: errorMsg);
+          });
 
   Future<void> update{{feature_name.pascalCase()}}(int id, {{feature_name.pascalCase()}}Model model) async =>
       handleError(() async {

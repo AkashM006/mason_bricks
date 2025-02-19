@@ -36,6 +36,10 @@ class {{feature_name.pascalCase()}}Service {
     return result.toEntity();
   }
 
+  Stream<{{feature_name.pascalCase()}}Entity> watch{{feature_name.pascalCase()}}(int id) => _appDatabase.{{feature_name.camelCase()}}Dao
+      .watch{{feature_name.pascalCase()}}(id)
+      .map((model) => model.toEntity());
+
   Future<void> update{{feature_name.pascalCase()}}({{feature_name.pascalCase()}}Entity entity) async => await _appDatabase
       .{{feature_name.camelCase()}}Dao
       .update{{feature_name.pascalCase()}}(entity.id, {{feature_name.pascalCase()}}Model.fromEntity(entity));
