@@ -18,8 +18,8 @@ class {{feature_name.pascalCase()}}Service {
   {{/uses_db}}
 
   {{#uses_db}}
-  Stream<List<{{feature_name.pascalCase()}}Entity>> watch{{feature_name.pascalCase()}}() =>
-      _appDatabase.{{feature_name.camelCase()}}Dao.watch{{feature_name.pascalCase()}}().map(
+  Stream<List<{{feature_name.pascalCase()}}Entity>> watch{{feature_name.pascalCase()}}s() =>
+      _appDatabase.{{feature_name.camelCase()}}Dao.watch{{feature_name.pascalCase()}}s().map(
             (models) => models
                 .map(
                   (model) => model.toEntity(),

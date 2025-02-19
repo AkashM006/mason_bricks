@@ -16,7 +16,7 @@ class {{feature_name.pascalCase()}}Dao extends DatabaseAccessor<AppDatabase> wit
 
   {{feature_name.pascalCase()}}Dao(this.db): super(db);
 
-  Stream<List<{{feature_name.pascalCase()}}Model>> watch{{feature_name.pascalCase()}}() => 
+  Stream<List<{{feature_name.pascalCase()}}Model>> watch{{feature_name.pascalCase()}}s() => 
       select({{feature_name.camelCase()}}).watch().map(({{feature_name.camelCase()}}List) {
         return {{feature_name.camelCase()}}List
             .map(({{feature_name.camelCase()}}) => {{feature_name.pascalCase()}}Model.fromDbModel({{feature_name.camelCase()}},),)
