@@ -6,7 +6,7 @@ class Watch{{feature_name.pascalCase()}}sUsecase
     extends Usecase<Stream<List<{{feature_name.pascalCase()}}Entity>>, void> {
   final {{feature_name.pascalCase()}}Repository _{{feature_name.camelCase()}}Repository;
 
-  const Watch{{feature_name.pascalCase()}s}Usecase(this._{{feature_name.camelCase()}}Repository);
+  const Watch{{feature_name.pascalCase()}}sUsecase(this._{{feature_name.camelCase()}}Repository);
 
   @override
   Stream<List<{{feature_name.pascalCase()}}Entity>> call({void params}) =>
