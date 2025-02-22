@@ -44,7 +44,7 @@ class {{feature_name.pascalCase()}}Dao extends DatabaseAccessor<AppDatabase> wit
   }, "getting your {{feature_name.sentenceCase()}}");
 
   Stream<{{feature_name.pascalCase()}}Model> watch{{feature_name.pascalCase()}}(int id) =>
-      (select(todoItem)..where((tbl) => tbl.id.equals(id)))
+      (select({{feature_name.camelCase()}})..where((tbl) => tbl.id.equals(id)))
           .watchSingle()
           .map(({{feature_name.camelCase()}}) {
             return {{feature_name.pascalCase()}}Model.fromDbModel({{feature_name.camelCase()}});
