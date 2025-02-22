@@ -5,16 +5,19 @@ import 'package:flutter/material.dart';
 // Call the init method inside the build() of a top level widget that doesn't re-render
 class AppOffsets {
   static late BoxConstraints formWidthConstraint;
+  static late BoxConstraints listWidthConstraint;
   static late BoxConstraints messageWidthConstaint;
   static late EdgeInsets screenPadding;
   static late BorderRadius cardBorderRadius;
 
   static void init(BuildContext context) {
     formWidthConstraint = const BoxConstraints(maxWidth: 500);
+    listWidthConstraint = const BoxConstraints(maxWidth: 500);
     messageWidthConstaint = BoxConstraints(
-      maxWidth: SizeConfig.safeBlockHorizontal * 80 > 600
-          ? 600
-          : SizeConfig.safeBlockHorizontal * 80,
+      maxWidth:
+          SizeConfig.safeBlockHorizontal * 80 > 600
+              ? 600
+              : SizeConfig.safeBlockHorizontal * 80,
     );
     screenPadding = EdgeInsets.symmetric(
       vertical: SizeConfig.safeBlockVertical * 2,
