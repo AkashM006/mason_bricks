@@ -2,10 +2,7 @@ import 'package:{{ project_name.snakeCase() }}/src/core/constants/size.dart';
 import 'package:flutter/material.dart';
 
 class CustomErrorWidget extends StatelessWidget {
-  const CustomErrorWidget({
-    super.key,
-    required this.text,
-  });
+  const CustomErrorWidget({super.key, required this.text});
 
   final String text;
 
@@ -14,9 +11,7 @@ class CustomErrorWidget extends StatelessWidget {
     final errorColor = Theme.of(context).colorScheme.error;
 
     return ConstrainedBox(
-      // Change constraints if required
-      // constraints: AppOffsets.messageWidthConstaint,
-      constraints: const BoxConstraints(maxWidth: 500),
+      constraints: AppOffsets.messageWidthConstaint,
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         crossAxisAlignment: CrossAxisAlignment.center,
@@ -26,16 +21,13 @@ class CustomErrorWidget extends StatelessWidget {
             size: SizeConfig.safeBlockVertical * 5,
             color: errorColor,
           ),
-          SizedBox(
-            height: SizeConfig.safeBlockVertical * 2,
-          ),
+          SizedBox(height: SizeConfig.safeBlockVertical * 2),
           Text(
             text,
             textAlign: TextAlign.center,
-            style: Theme.of(context)
-                .textTheme
-                .bodyLarge!
-                .copyWith(color: errorColor),
+            style: Theme.of(
+              context,
+            ).textTheme.bodyLarge!.copyWith(color: errorColor),
           ),
         ],
       ),
