@@ -42,6 +42,16 @@ extension AppRoutesExtension on PAGES {
             PAGES.driftDebug => (context, routerState) =>
                 const DriftDebugScreen(),
             {{/uses_db}}
+            /* 
+            Sample on how to get queryParameters and parse them
+            PAGES.ingredientDetail => (context, routerState) {
+              final id = routerState.uri.queryParameters['id'];
+              int? parsedId;
+
+              if (id != null) parsedId = int.tryParse(id);
+
+              return IngredientDetailScreen(id: parsedId);
+            }, */
             PAGES.notFound => (context, routerState) => const NotFoundScreen(),
             PAGES.home => (context, routerState) => const HomeScreen(),
           };
