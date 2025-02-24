@@ -41,3 +41,17 @@ String? numberGreaterThanZero(String name, String? value) {
 
   return null;
 }
+
+/// Pass name and value of the field to check if the field value has anything other than alphabets and space
+String? wordMustNotHaveSpecialCharactersValidator(String name, String? value) {
+  final isRequired = requiredValidator(name, value);
+
+  if (isRequired != null) return isRequired;
+
+  final regex = RegExp(r'^[a-zA-Z\s]+$');
+  final result = regex.hasMatch(value!.trim());
+
+  if (!result) return "$name can have only alphabets and spaces";
+
+  return null;
+}
