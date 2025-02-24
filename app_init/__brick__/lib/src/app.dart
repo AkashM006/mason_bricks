@@ -10,6 +10,7 @@ import 'package:{{ project_name.snakeCase() }}/src/features/shared/presentation/
 import 'package:{{ project_name.snakeCase() }}/src/routing/router.dart';
 {{/uses_router}}
 import 'package:{{ project_name.snakeCase() }}/src/core/constants/size.dart';
+import 'package:{{project_name.snakeCase()}}/src/core/constants/app_offsets.dart';
 
 class App extends StatelessWidget {
   const App({super.key});
@@ -19,6 +20,7 @@ class App extends StatelessWidget {
 
     // Initialize any configs here if required
     // These are typically store in core/constants/
+    AppOffsets.init(context);
     SizeConfig.init(context);
 
     {{#locks_screen_to_portrait}}
