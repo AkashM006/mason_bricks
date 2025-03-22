@@ -11,6 +11,24 @@ extension ThemeContextExtension on BuildContext {
   ColorScheme get colorScheme => Theme.of(this).colorScheme;
 }
 
+extension ListEqualityExtension<T> on List<T> {
+  bool isEqualTo(List<T> other) {
+    if (length != other.length) return false;
+
+    final count1 = <T, int>{};
+    final count2 = <T, int>{};
+
+    for (var item in this) {
+      count1[item] = (count1[item] ?? 0) + 1;
+    }
+    for (var item in other) {
+      count2[item] = (count2[item] ?? 0) + 1;
+    }
+
+    return count1.toString() == count2.toString();
+  }
+}
+
 extension StringExtension on String {
   String get capitalize =>
       "${this[0].toUpperCase()}${substring(1).toLowerCase()}";
