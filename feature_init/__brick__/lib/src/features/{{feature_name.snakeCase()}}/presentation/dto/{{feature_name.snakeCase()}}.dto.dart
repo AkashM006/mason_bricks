@@ -1,16 +1,13 @@
 import 'package:{{project_name.snakeCase()}}/src/features/{{feature_name.snakeCase()}}/domain/entity/{{feature_name.snakeCase()}}.entity.dart';
 
 class {{feature_name.pascalCase()}}Dto {
-  final int _id;
-  final String _name;
+  final int id;
+  final String name;
 
   const {{feature_name.pascalCase()}}Dto({
-    int id = -1,
-    required String name,
-  }) : _id = id, _name = name;
-
-  int get id => _id;
-  String get name => _name;
+    this.id = -1,
+    required this. name,
+  });
 
   {{feature_name.pascalCase()}}Dto copyWith({
     int? id,
