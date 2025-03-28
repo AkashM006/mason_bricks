@@ -5,16 +5,13 @@ import 'package:{{project_name.snakeCase()}}/src/features/shared/data/data_sourc
 import 'package:drift/drift.dart';
 
 class {{ feature_name.pascalCase() }}Model {
-  final int _id;
-  final String _name;
+  final int id;
+  final String name;
 
   const {{feature_name.pascalCase()}}Model({
-    required int id,
-    required String name,
-  }) : _id = id, _name = name;
-
-  int get id => _id;
-  String get name => _name;
+    required this.id,
+    required this.name,
+  });
 
   factory {{feature_name.pascalCase()}}Model.fromEntity({{feature_name.pascalCase()}}Entity entity) => {{feature_name.pascalCase()}}Model(
     id: entity.id,
