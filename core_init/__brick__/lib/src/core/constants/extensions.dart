@@ -5,6 +5,7 @@ String getFormattedTimeFromDuration(Duration duration) =>
     '${duration.inMinutes.toString().padLeft(2, '0')}:${(duration.inSeconds % 60).toString().padLeft(2, '0')}';
 
 final DateFormat dateFormatter = DateFormat('dd-MMM-yyyy');
+final DateFormat dateWithDayFormatter = DateFormat('EEEE, MMMM d');
 
 extension ThemeContextExtension on BuildContext {
   TextTheme get textTheme => Theme.of(this).textTheme;
@@ -45,4 +46,5 @@ extension IntExtension on int {
 
 extension DateTimeExtension on DateTime {
   String get formattedDate => dateFormatter.format(this);
+  String get formattedDateWithDay => dateWithDayFormatter.format(this);
 }
