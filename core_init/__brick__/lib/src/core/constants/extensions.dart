@@ -47,4 +47,10 @@ extension IntExtension on int {
 extension DateTimeExtension on DateTime {
   String get formattedDate => dateFormatter.format(this);
   String get formattedDateWithDay => dateWithDayFormatter.format(this);
+  bool get isToday => isSameDate(DateTime.now());
+  bool get isTomorrow =>
+      isSameDate(DateTime.now().add(const Duration(days: 1)));
+  bool isSameDate(DateTime other) {
+    return year == other.year && month == other.month && day == other.day;
+  }
 }
