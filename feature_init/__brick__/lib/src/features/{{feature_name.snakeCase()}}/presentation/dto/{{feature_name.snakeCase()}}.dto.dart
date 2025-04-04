@@ -26,6 +26,11 @@ class {{feature_name.pascalCase()}}Dto {
     name: entity.name,
   );
 
+  factory {{feature_name.pascalCase()}}Dto.placeholder() => {{feature_name.pascalCase()}}Dto(
+    id: 0,
+    name: "Placeholder",
+  );
+
   {{feature_name.pascalCase()}}Entity toEntity() => {{feature_name.pascalCase()}}Entity(
     id: id,
     name: name,
