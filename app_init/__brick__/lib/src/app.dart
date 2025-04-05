@@ -22,8 +22,8 @@ class App extends StatelessWidget {
 
     // Initialize any configs here if required
     // These are typically store in core/constants/
-    AppOffsets.init(context);
     SizeConfig.init(context);
+    AppOffsets.init(context);
 
     {{#locks_screen_to_portrait}}
     SystemChrome.setPreferredOrientations([
@@ -48,7 +48,7 @@ class App extends StatelessWidget {
       useMaterial3: true,
     );
 
-    final themeMode = ThemeMode.system;
+    const themeMode = ThemeMode.system;
 
     {{#uses_router}}
     return MaterialApp.router(
