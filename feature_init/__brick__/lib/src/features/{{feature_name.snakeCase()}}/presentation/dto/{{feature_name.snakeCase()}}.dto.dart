@@ -17,7 +17,7 @@ class {{feature_name.pascalCase()}}Dto {
     name: name ?? this.name,
   );
 
-  factory {{feature_name.pascalCase()}}Dto.init() => {{feature_name.pascalCase()}}Dto(
+  factory {{feature_name.pascalCase()}}Dto.init() => const {{feature_name.pascalCase()}}Dto(
     name: "",
   );
 
@@ -26,7 +26,7 @@ class {{feature_name.pascalCase()}}Dto {
     name: entity.name,
   );
 
-  factory {{feature_name.pascalCase()}}Dto.placeholder() => {{feature_name.pascalCase()}}Dto(
+  factory {{feature_name.pascalCase()}}Dto.placeholder() => const {{feature_name.pascalCase()}}Dto(
     id: 0,
     name: "Placeholder",
   );
