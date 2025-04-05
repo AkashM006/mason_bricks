@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:{{ project_name.snakeCase() }}/src/core/constants/app_offsets.dart';
 
 class EntityNotFoundScreen extends StatelessWidget {
   const EntityNotFoundScreen({
