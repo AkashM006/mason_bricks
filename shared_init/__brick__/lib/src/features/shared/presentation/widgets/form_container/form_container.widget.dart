@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:{{ project_name.snakeCase() }}/src/core/constants/app_offsets.dart';
 
 class FormContainerWidget extends StatelessWidget {
   const FormContainerWidget({
@@ -17,7 +18,7 @@ class FormContainerWidget extends StatelessWidget {
       child: Column(children: children),
     );
 
-    final padding = const EdgeInsets.all(20);
+    const padding = EdgeInsets.all(20);
 
     return isScroll
         ? SingleChildScrollView(padding: padding, child: constrainedBox)

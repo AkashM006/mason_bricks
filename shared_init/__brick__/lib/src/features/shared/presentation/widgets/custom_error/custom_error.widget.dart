@@ -1,4 +1,5 @@
 import 'package:{{ project_name.snakeCase() }}/src/core/constants/size.dart';
+import 'package:{{ project_name.snakeCase() }}/src/core/constants/app_offsets.dart';
 import 'package:flutter/material.dart';
 
 class CustomErrorWidget extends StatelessWidget {
