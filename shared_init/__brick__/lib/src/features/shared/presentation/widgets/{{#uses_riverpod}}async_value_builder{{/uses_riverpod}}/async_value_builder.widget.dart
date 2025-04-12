@@ -9,8 +9,14 @@ class AsyncValueBuilderWidget<T> extends StatelessWidget {
     required this.asyncValue,
     required this.builder,
     this.loaderBuilder,
-    this.isSliver = false,
-  });
+  }) : isSliver = false;
+
+  const AsyncValueBuilderWidget.sliver({
+    super.key,
+    required this.asyncValue,
+    required this.builder,
+    this.loaderBuilder,
+  }) : isSliver = tru;
 
   final AsyncValue<T> asyncValue;
   final Widget Function(BuildContext context, T data) builder;
