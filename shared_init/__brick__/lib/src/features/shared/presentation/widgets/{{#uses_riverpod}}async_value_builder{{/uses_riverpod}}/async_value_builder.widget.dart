@@ -16,7 +16,7 @@ class AsyncValueBuilderWidget<T> extends StatelessWidget {
     required this.asyncValue,
     required this.builder,
     this.loaderBuilder,
-  }) : isSliver = tru;
+  }) : isSliver = true;
 
   final AsyncValue<T> asyncValue;
   final Widget Function(BuildContext context, T data) builder;
