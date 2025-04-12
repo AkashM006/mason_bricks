@@ -28,8 +28,8 @@ class AsyncValueBuilderWidget<T> extends StatelessWidget {
                   child: CustomErrorWidget(text: error.toString()),
                 ),
     loading: () {
-      if (loadingBuilder != null) {
-        return loadingBuilder!(context);
+      if (loaderBuilder != null) {
+        return loaderBuilder!(context);
       }
 
       const loader = Center(child: LoaderWidget());
