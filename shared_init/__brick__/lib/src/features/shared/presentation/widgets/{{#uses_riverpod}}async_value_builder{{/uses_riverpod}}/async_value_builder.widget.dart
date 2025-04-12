@@ -14,7 +14,7 @@ class AsyncValueBuilderWidget<T> extends StatelessWidget {
 
   final AsyncValue<T> asyncValue;
   final Widget Function(BuildContext context, T data) builder;
-  final Widget Function(BuildContext context) loaderBuilder;
+  final Widget Function(BuildContext context)? loaderBuilder;
   final bool isSliver;
 
   @override
