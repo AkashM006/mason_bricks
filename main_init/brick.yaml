@@ -8,7 +8,7 @@ description: A new brick created with the Mason CLI.
 # The following defines the version and build number for your brick.
 # A version number is three numbers separated by dots, like 1.2.34
 # followed by an optional build number (separated by a +).
-version: 0.1.0+1
+version: 0.1.0+2
 
 # The following defines the environment for the current brick.
 # It includes the version of mason that the brick requires.
@@ -31,6 +31,11 @@ vars:
     description: Project Name
     default: my_flutter_project
     prompt: What is the project name( name used in flutter create )?
+  uses_v2:
+    type: boolean
+    description: Does this project use the v2 version of the main_init brik
+    default: true
+    prompt: Do you want to use the main_init v2?
   uses_router:
     type: boolean
     description: Does the project use router
