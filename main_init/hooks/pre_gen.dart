@@ -6,6 +6,7 @@ void run(HookContext context) async {
   final usesRouter = context.vars['uses_router'] as bool;
   final usesRiverpod = context.vars['uses_riverpod'] as bool;
   final usesDb = context.vars['uses_db'] as bool;
+  final usesV2 = context.vars['uses_v2'] as bool;
   final locksScreenToPortrait =
       context.vars['locks_screen_to_portrait'] as bool;
   final projectName = context.vars['project_name'] as String;
@@ -14,7 +15,7 @@ void run(HookContext context) async {
   final List<Map<String, dynamic>> brickDetails = [
     {
       'name': 'core',
-      'path': 'core_init',
+      'path': usesV2 ? 'core_init_v2' : 'core_init',
     },
     {
       'name': 'shared',
