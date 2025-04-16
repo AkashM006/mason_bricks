@@ -1,5 +1,5 @@
 import 'package:{{project_name.snakeCase()}}/src/core/utils/data_state.util.dart';
-import 'package:{{project_name.snakeCase()}}/src/features/todo/domain/todo.entity.dart';
+import 'package:{{project_name.snakeCase()}}/src/features/{{feature_name.snakeCase()}}/domain/{{feature_name.snakeCase()}}.entity.dart';
 
 abstract class {{feature_name.pascalCase()}}Repository {
   const {{feature_name.pascalCase()}}Repository();
