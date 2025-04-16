@@ -3,7 +3,7 @@ import 'package:{{project_name.snakeCase()}}/src/core/utils/custom_error.util.da
 import 'package:{{project_name.snakeCase()}}/src/core/utils/error_handler.util.dart';
 import 'package:{{project_name.snakeCase()}}/src/core/utils/error_msg.util.dart';
 import 'package:{{project_name.snakeCase()}}/src/features/shared/data/data_sources/db/database.dart';
-import 'package:{{project_name.snakeCase()}}/src/features/todo/data/data_sources/db/schema/{{feature_name.snakeCase()}}.scheme.dart';
+import 'package:{{project_name.snakeCase()}}/src/features/{{feature_name.snakeCase()}}/data/data_sources/db/schema/{{feature_name.snakeCase()}}.schema.dart';
 
 part '{{feature_name.snakeCase()}}.dao.g.dart';
 
