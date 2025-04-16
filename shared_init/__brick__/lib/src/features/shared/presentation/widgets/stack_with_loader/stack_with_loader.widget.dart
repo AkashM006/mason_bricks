@@ -13,17 +13,17 @@ class StackWithLoaderWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) => Stack(
-        children: [
-          ...children,
-          if (isLoading)
-            Positioned.fill(
-              child: Container(
-                color: Theme.of(context).colorScheme.onSurface.withOpacity(0.5),
-                child: const Center(
-                  child: LoaderWidget(),
-                ),
-              ),
-            )
-        ],
-      );
+    children: [
+      ...children,
+      if (isLoading)
+        Positioned.fill(
+          child: Container(
+            color: Theme.of(
+              context,
+            ).colorScheme.onSurface.withValues(alpha: 0.5),
+            child: const Center(child: LoaderWidget()),
+          ),
+        ),
+    ],
+  );
 }
