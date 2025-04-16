@@ -7,7 +7,7 @@ import 'package:{{project_name.snakeCase()}}/src/features/{{feature_name.snakeCa
 import 'package:{{project_name.snakeCase()}}/src/features/{{feature_name.snakeCase()}}/domain/{{feature_name.snakeCase()}}_mapper.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 
-part '{{feature_name.snakeCase()}}.repository.g.dart';
+part 'db_{{feature_name.snakeCase()}}.repository.g.dart';
 
 class Db{{feature_name.pascalCase()}}Repository extends BaseRepository implements {{feature_name.pascalCase()}}Repository {
   final AppDatabase _db;

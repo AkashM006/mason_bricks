@@ -9,9 +9,7 @@ part '{{feature_name.snakeCase()}}.dao.g.dart';
 
 @DriftAccessor(
   tables: [
-    {
-      {feature_name.pascalCase()},
-    },
+    {{feature_name.pascalCase()}},
   ],
 )
 class {{feature_name.pascalCase()}}Dao extends DatabaseAccessor<AppDatabase> with _${{feature_name.pascalCase()}}DaoMixin {
