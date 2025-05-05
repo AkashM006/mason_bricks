@@ -6,17 +6,33 @@ class BodyContainerWidget extends StatelessWidget {
     super.key,
     required this.child,
     this.applyPadding = true,
-  });
+  }) : isSliver = false;
+
+  const BodyContainerWidget.sliver({
+    super.key,
+    required this.child,
+    this.applyPadding = true,
+  }) : isSliver = true;
 
   final Widget child;
   final bool applyPadding;
+  final bool isSliver;
 
   @override
   Widget build(BuildContext context) {
     final newChild =
         applyPadding
-            ? Padding(padding: AppOffsets.bodyPadding, child: child)
+            ? isSliver
+                ? SliverPadding(padding: AppOffsets.bodyPadding, sliver: child)
+                : Padding(padding: AppOffsets.bodyPadding, child: child)
             : child;
+
+    if (isSliver) {
+      return SliverConstrainedCrossAxis(
+        maxExtent: AppOffsets.bodyWidthConstraint.maxWidth,
+        sliver: newChild,
+      );
+    }
 
     return ConstrainedBox(
       constraints: AppOffsets.bodyWidthConstraint,
