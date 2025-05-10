@@ -37,7 +37,7 @@ String? numberGreaterThanZero(String name, String? value) {
 
   final parsedValue = int.parse(value!);
 
-  if (parsedValue <= 0) return "$name must be more than 0";
+  if (parsedValue <= 0) return "$name cannot be 0";
 
   return null;
 }
