@@ -54,3 +54,12 @@ extension DateTimeExtension on DateTime {
     return year == other.year && month == other.month && day == other.day;
   }
 }
+
+extension TimeOfDayFormatter on TimeOfDay {
+  String get formattedTime {
+    final hour = hourOfPeriod == 0 ? 12 : hourOfPeriod;
+    final minuteStr = minute.toString().padLeft(2, '0');
+    final periodStr = period == DayPeriod.am ? "AM" : "PM";
+    return "$hour:$minuteStr $periodStr";
+  }
+}
