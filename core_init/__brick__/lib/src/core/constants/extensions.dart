@@ -6,6 +6,7 @@ String getFormattedTimeFromDuration(Duration duration) =>
 
 final DateFormat dateFormatter = DateFormat('dd-MMM-yyyy');
 final DateFormat dateWithDayFormatter = DateFormat('EEEE, MMMM d');
+final DateFormat shortDateFormatter = DateFormat('MMM d');
 
 extension ThemeContextExtension on BuildContext {
   TextTheme get textTheme => Theme.of(this).textTheme;
@@ -47,6 +48,7 @@ extension IntExtension on int {
 extension DateTimeExtension on DateTime {
   String get formattedDate => dateFormatter.format(this);
   String get formattedDateWithDay => dateWithDayFormatter.format(this);
+  String get shortFormattedDate => shortDateFormatter.format(this);
   bool get isToday => isSameDate(DateTime.now());
   bool get isTomorrow =>
       isSameDate(DateTime.now().add(const Duration(days: 1)));
